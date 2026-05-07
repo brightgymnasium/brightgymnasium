@@ -1,51 +1,322 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Bright Gymnasium</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bright Gymnasium | Fitness Tracking & Gym Management</title>
+  <meta name="description" content="Bright Gymnasium is a modern fitness tracking and gym management platform for members, trainers, and gym owners." />
+  <meta name="keywords" content="Bright Gymnasium, gym app, fitness tracking, gym management, workout tracker, attendance tracking" />
+
+  <link rel="icon" href="favicon.png" />
+
   <style>
-    body{
-      font-family: Arial;
-      background:#0f1115;
-      color:white;
-      text-align:center;
-      padding:60px;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    h1{
-      font-size:48px;
-      margin-bottom:10px;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f1115;
+      color: #ffffff;
+      line-height: 1.6;
     }
 
-    p{
-      font-size:20px;
-      color:#bdbdbd;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .btn{
-      display:inline-block;
-      margin-top:30px;
-      padding:14px 28px;
-      background:#ff5a36;
-      color:white;
-      text-decoration:none;
-      border-radius:12px;
-      font-weight:bold;
+    header {
+      padding: 24px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 17, 21, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #222;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      color: #ff5a36;
+    }
+
+    nav a {
+      margin-left: 22px;
+      color: #ccc;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      padding: 90px 8% 70px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #c5c5c5;
+      max-width: 620px;
+      margin-bottom: 32px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: 700;
+      display: inline-block;
+    }
+
+    .primary {
+      background: #ff5a36;
+      color: #fff;
+    }
+
+    .secondary {
+      border: 1px solid #444;
+      color: #fff;
+    }
+
+    .phone {
+      background: linear-gradient(145deg, #1b1f27, #111318);
+      border: 1px solid #2b2f38;
+      border-radius: 30px;
+      padding: 24px;
+      min-height: 430px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+    }
+
+    .screen {
+      background: #171a21;
+      border-radius: 22px;
+      padding: 24px;
+      height: 100%;
+    }
+
+    .screen h3 {
+      margin-bottom: 18px;
+      color: #ff5a36;
+    }
+
+    .card {
+      background: #222630;
+      padding: 16px;
+      border-radius: 16px;
+      margin-bottom: 14px;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: #aaa;
+      max-width: 760px;
+      margin: 0 auto 45px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .feature {
+      background: #171a21;
+      border: 1px solid #252a33;
+      border-radius: 20px;
+      padding: 28px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      color: #ff5a36;
+    }
+
+    .feature p {
+      color: #bbb;
+    }
+
+    .privacy {
+      background: #151820;
+      border-top: 1px solid #242833;
+      border-bottom: 1px solid #242833;
+    }
+
+    .contact-box {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+      background: #171a21;
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid #292e38;
+    }
+
+    footer {
+      padding: 30px 8%;
+      text-align: center;
+      color: #888;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 850px) {
+      header {
+        flex-direction: column;
+        gap: 14px;
+      }
+
+      nav a {
+        margin: 0 8px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 60px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<h1>Bright Gymnasium</h1>
+<header>
+  <div class="logo">Bright Gymnasium</div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#support">Support</a>
+  </nav>
+</header>
 
-<p>
-Modern fitness tracking and gym management platform.
-</p>
+<main>
 
-<a class="btn" href="#">
-Coming Soon
-</a>
+  <section class="hero">
+    <div>
+      <h1>Modern Fitness Tracking & Gym Management</h1>
+      <p>
+        Bright Gymnasium helps gym owners and members manage workouts, attendance,
+        billing, progress, and fitness routines in one simple platform.
+      </p>
+
+      <div class="buttons">
+        <a class="btn primary" href="#">Play Store Coming Soon</a>
+        <a class="btn secondary" href="#features">View Features</a>
+      </div>
+    </div>
+
+    <div class="phone">
+      <div class="screen">
+        <h3>Today’s Dashboard</h3>
+        <div class="card">🏋️ Workout Tracking</div>
+        <div class="card">📅 Attendance Log</div>
+        <div class="card">💳 Billing & Invoices</div>
+        <div class="card">📈 Member Progress</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2 class="section-title">Features</h2>
+    <p class="section-subtitle">
+      Built for gyms, trainers, and fitness users who want a clean and reliable digital experience.
+    </p>
+
+    <div class="grid">
+      <div class="feature">
+        <h3>Workout Tracking</h3>
+        <p>Log exercises, sets, reps, weights, and progress with a simple interface.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Member Management</h3>
+        <p>Manage member profiles, joining dates, plans, and activity history.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Attendance</h3>
+        <p>Track daily attendance and monitor active, inactive, and returning members.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Billing & Invoices</h3>
+        <p>Create and manage membership bills, dues, payments, and reminders.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Reports</h3>
+        <p>View revenue, attendance, member activity, and business insights.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Mobile First</h3>
+        <p>Designed for Android with a fast, clean, and easy-to-use experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy" class="privacy">
+    <h2 class="section-title">Privacy First</h2>
+    <p class="section-subtitle">
+      Bright Gymnasium is designed with user privacy and responsible data handling in mind.
+      We only use information required to operate the gym management features.
+    </p>
+  </section>
+
+  <section id="support">
+    <div class="contact-box">
+      <h2 class="section-title">Support</h2>
+      <p class="section-subtitle">
+        Need help, want to report a bug, or have a feature request?
+      </p>
+      <p>Email: <strong>support@brightgymnasium.com</strong></p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Bright Gymnasium. All rights reserved.
+</footer>
 
 </body>
 </html>
