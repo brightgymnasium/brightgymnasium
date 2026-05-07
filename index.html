@@ -5,93 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Bright Gymnasium | Gym in Kaundampalayam, Coimbatore</title>
-  <meta name="description" content="Bright Gymnasium is a 3-floor fitness facility in Kaundampalayam, Coimbatore with cardio, strength training, free workouts and yoga." />
+  <meta name="description" content="Bright Gymnasium is a modern 3-floor gym in Kaundampalayam, Coimbatore with cardio, strength training, free workouts and yoga." />
 
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
+
     html{scroll-behavior:smooth}
+
     body{
-      font-family:Arial,Helvetica,sans-serif;
-      background:#14191f;
-      color:#fff;
-      line-height:1.6;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:#f7f7f4;
+      color:#121212;
+      line-height:1.7;
     }
+
     a{text-decoration:none;color:inherit}
-    .accent{color:#ff3d22}
+
+    :root{
+      --dark:#111418;
+      --black:#0d0f12;
+      --orange:#ff4b22;
+      --gold:#ffb000;
+      --soft:#f7f7f4;
+      --muted:#666;
+      --card:#ffffff;
+    }
 
     header{
       position:fixed;
-      top:28px;
-      left:7%;
-      right:7%;
+      top:24px;
+      left:6%;
+      right:6%;
       z-index:100;
-      padding:16px 26px;
-      border:1px solid rgba(255,255,255,.22);
-      border-radius:42px;
-      background:rgba(20,25,31,.72);
-      backdrop-filter:blur(14px);
+      padding:16px 28px;
+      border-radius:40px;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(16px);
       display:flex;
       align-items:center;
       justify-content:space-between;
+      box-shadow:0 12px 40px rgba(0,0,0,.12);
     }
 
     .brand{
-      font-size:28px;
+      font-size:24px;
       font-weight:900;
-      letter-spacing:-1px;
+      letter-spacing:-.6px;
+      color:#111;
     }
-
-    .brand span{color:#ff3d22}
 
     nav a{
       margin-left:24px;
-      font-size:13px;
-      font-weight:800;
-      text-transform:uppercase;
-      color:#ddd;
+      font-size:14px;
+      font-weight:700;
+      color:#222;
     }
 
     .nav-btn{
-      background:#ff3d22;
+      background:linear-gradient(135deg,var(--orange),var(--gold));
       color:#fff;
-      padding:13px 22px;
+      padding:12px 22px;
       border-radius:28px;
       margin-left:24px;
+      box-shadow:0 10px 24px rgba(255,75,34,.25);
     }
 
     .hero{
       min-height:100vh;
-      padding:150px 7% 80px;
+      padding:150px 6% 80px;
       display:grid;
       grid-template-columns:1.05fr .95fr;
-      gap:40px;
+      gap:50px;
       align-items:center;
       background:
-        radial-gradient(circle at 80% 30%, rgba(255,61,34,.45), transparent 34%),
-        linear-gradient(120deg,#221612,#14191f 60%);
-      overflow:hidden;
+        radial-gradient(circle at top right, rgba(255,176,0,.24), transparent 35%),
+        linear-gradient(135deg,#fff 0%,#f7f3ec 52%,#fff 100%);
     }
 
     .hero h1{
-      font-size:70px;
+      font-size:68px;
       line-height:1.05;
-      font-weight:1000;
-      text-transform:uppercase;
-      text-shadow:0 8px 0 rgba(0,0,0,.18);
+      font-weight:950;
+      letter-spacing:-2.5px;
       margin-bottom:24px;
+      color:#101010;
+    }
+
+    .hero h1 span{
+      background:linear-gradient(135deg,var(--orange),var(--gold));
+      -webkit-background-clip:text;
+      color:transparent;
     }
 
     .hero p{
-      max-width:690px;
-      font-size:16px;
-      color:#eee;
-      text-transform:uppercase;
-      font-weight:700;
-      line-height:2;
-      margin-bottom:30px;
+      max-width:680px;
+      font-size:19px;
+      color:#444;
+      margin-bottom:32px;
     }
 
-    .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+    .hero-actions{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-bottom:34px;
+    }
 
     .btn{
       display:inline-flex;
@@ -99,128 +117,149 @@
       justify-content:center;
       padding:15px 28px;
       border-radius:32px;
-      font-weight:900;
-      text-transform:uppercase;
+      font-weight:800;
       font-size:14px;
       transition:.25s;
     }
 
-    .btn-primary{background:#ff3d22;color:#fff}
-    .btn-outline{border:1px solid rgba(255,255,255,.35);color:#fff}
+    .btn-primary{
+      background:linear-gradient(135deg,var(--orange),var(--gold));
+      color:#fff;
+      box-shadow:0 12px 28px rgba(255,75,34,.28);
+    }
+
+    .btn-light{
+      background:#fff;
+      color:#111;
+      box-shadow:0 12px 28px rgba(0,0,0,.08);
+    }
+
     .btn:hover{transform:translateY(-2px)}
 
     .chips{
       display:flex;
       flex-wrap:wrap;
       gap:12px;
-      max-width:620px;
+      max-width:650px;
     }
 
     .chip{
-      border:1px solid rgba(255,255,255,.25);
-      background:rgba(255,255,255,.06);
-      padding:12px 22px;
+      background:#fff;
+      padding:11px 20px;
       border-radius:28px;
-      font-size:12px;
-      font-weight:900;
-      text-transform:uppercase;
+      font-size:13px;
+      font-weight:800;
+      color:#222;
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
     }
 
     .hero-visual{
       min-height:560px;
       border-radius:36px;
       background:
-        linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.5)),
+        linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.25)),
         url('images/hero.jpg');
       background-size:cover;
       background-position:center;
-      box-shadow:0 40px 90px rgba(0,0,0,.35);
-      border:1px solid rgba(255,255,255,.16);
+      box-shadow:0 35px 80px rgba(0,0,0,.22);
     }
 
-    section{padding:90px 7%}
-    .dark{background:#11161b}
+    section{
+      padding:90px 6%;
+    }
+
+    .dark{
+      background:#111418;
+      color:#fff;
+    }
+
     .label{
-      color:#ff3d22;
+      color:var(--orange);
       font-weight:900;
-      text-transform:uppercase;
       margin-bottom:12px;
+      font-size:15px;
     }
 
     .section-title{
-      font-size:58px;
-      line-height:1.05;
-      text-transform:uppercase;
-      font-weight:1000;
+      font-size:52px;
+      line-height:1.08;
+      font-weight:950;
+      letter-spacing:-1.8px;
       margin-bottom:20px;
-      text-shadow:0 7px 0 rgba(0,0,0,.20);
+    }
+
+    .section-title span{
+      background:linear-gradient(135deg,var(--orange),var(--gold));
+      -webkit-background-clip:text;
+      color:transparent;
     }
 
     .section-text{
-      max-width:760px;
-      color:#ddd;
-      font-weight:700;
-      text-transform:uppercase;
-      line-height:2;
+      max-width:820px;
+      color:#666;
+      font-size:18px;
       margin-bottom:44px;
     }
+
+    .dark .section-text{color:#d7d7d7}
 
     .stats{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      gap:28px;
-      margin-top:25px;
+      gap:24px;
+      margin-top:30px;
     }
 
     .stat{
+      background:#fff;
+      border-radius:26px;
+      padding:34px 24px;
       text-align:center;
+      box-shadow:0 18px 45px rgba(0,0,0,.08);
     }
 
     .stat strong{
-      font-size:66px;
+      font-size:52px;
       line-height:1;
-      font-weight:1000;
-      text-shadow:0 7px 0 rgba(0,0,0,.20);
+      font-weight:950;
+      color:#111;
     }
 
     .stat span{
-      color:#ff3d22;
-      font-size:48px;
-      font-weight:1000;
+      color:var(--orange);
+      font-size:34px;
+      font-weight:950;
     }
 
     .stat p{
-      font-weight:900;
-      text-transform:uppercase;
-      margin-top:12px;
-      line-height:1.2;
+      font-weight:800;
+      margin-top:10px;
+      color:#444;
+      line-height:1.3;
     }
 
-    .media-box{
-      margin-top:60px;
-      min-height:410px;
-      border-radius:28px;
-      overflow:hidden;
-      background:
-        linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.5)),
-        url('images/gym-floor.jpg');
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid rgba(255,255,255,.16);
-    }
-
-    .play{
-      width:76px;
-      height:76px;
-      border-radius:50%;
-      background:#ff3d22;
+    .floors{
       display:grid;
-      place-items:center;
-      font-size:30px;
-      box-shadow:0 0 0 12px rgba(255,255,255,.18);
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .floor{
+      background:#fff;
+      padding:34px;
+      border-radius:28px;
+      box-shadow:0 18px 45px rgba(0,0,0,.08);
+    }
+
+    .floor h3{
+      font-size:28px;
+      color:var(--orange);
+      margin-bottom:12px;
+    }
+
+    .floor p{
+      color:#555;
+      font-size:16px;
     }
 
     .cards{
@@ -230,12 +269,12 @@
     }
 
     .service-card{
-      height:260px;
-      border-radius:26px;
+      height:280px;
+      border-radius:28px;
       overflow:hidden;
       position:relative;
       background:#222;
-      border:1px solid rgba(255,255,255,.15);
+      box-shadow:0 24px 50px rgba(0,0,0,.22);
     }
 
     .service-card img{
@@ -251,7 +290,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background:linear-gradient(transparent,rgba(0,0,0,.85));
+      background:linear-gradient(transparent,rgba(0,0,0,.82));
     }
 
     .service-card h3{
@@ -259,31 +298,9 @@
       left:24px;
       bottom:22px;
       z-index:2;
-      font-size:18px;
-      text-transform:uppercase;
+      font-size:22px;
+      color:#fff;
     }
-
-    .floors{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:24px;
-    }
-
-    .floor{
-      background:#1c212b;
-      padding:32px;
-      border-radius:24px;
-      border:1px solid rgba(255,255,255,.09);
-    }
-
-    .floor h3{
-      font-size:28px;
-      color:#ff3d22;
-      text-transform:uppercase;
-      margin-bottom:12px;
-    }
-
-    .floor p{color:#ddd}
 
     .faq-wrap{
       display:grid;
@@ -294,44 +311,44 @@
 
     .faq-img{
       min-height:520px;
-      border-radius:28px;
+      border-radius:30px;
       background:url('images/trainer.jpg');
       background-size:cover;
       background-position:center;
-      border:1px solid rgba(255,255,255,.25);
+      box-shadow:0 24px 55px rgba(0,0,0,.18);
     }
 
     details{
-      background:#1c212b;
-      border-radius:16px;
+      background:#fff;
+      border-radius:20px;
       margin-bottom:16px;
       padding:24px;
-      border:1px solid rgba(255,255,255,.07);
+      box-shadow:0 14px 35px rgba(0,0,0,.08);
     }
 
     summary{
       cursor:pointer;
       font-weight:900;
-      text-transform:uppercase;
       list-style:none;
+      font-size:17px;
     }
 
     details p{
-      color:#ddd;
-      margin-top:18px;
-      font-size:14px;
-      line-height:1.9;
+      color:#555;
+      margin-top:16px;
+      font-size:15px;
+      line-height:1.8;
     }
 
     .contact{
       text-align:center;
       background:
-        radial-gradient(circle at center,rgba(255,61,34,.22),transparent 35%),
-        #11161b;
+        radial-gradient(circle at top,rgba(255,176,0,.20),transparent 35%),
+        #fff;
     }
 
     .contact-box{
-      max-width:920px;
+      max-width:960px;
       margin:auto;
     }
 
@@ -347,9 +364,9 @@
       width:100%;
       height:380px;
       border:0;
-      border-radius:24px;
+      border-radius:28px;
       margin-top:28px;
-      filter:grayscale(.2);
+      box-shadow:0 24px 55px rgba(0,0,0,.16);
     }
 
     .floating-wa{
@@ -362,11 +379,11 @@
       padding:15px 20px;
       border-radius:50px;
       font-weight:900;
-      box-shadow:0 12px 35px rgba(0,0,0,.35);
+      box-shadow:0 12px 35px rgba(0,0,0,.28);
     }
 
     footer{
-      padding:30px 7%;
+      padding:30px 6%;
       text-align:center;
       color:#aaa;
       background:#0c1014;
@@ -400,15 +417,14 @@
       }
 
       .hero h1{font-size:42px}
-      .section-title{font-size:38px}
+
+      .section-title{font-size:36px}
 
       .hero-visual{min-height:360px}
 
       .stats,.cards,.floors,.faq-wrap{
         grid-template-columns:1fr;
       }
-
-      .stat strong{font-size:54px}
     }
   </style>
 </head>
@@ -416,7 +432,7 @@
 <body>
 
 <header>
-  <div class="brand"><span>●</span> Bright Gymnasium</div>
+  <div class="brand">Bright Gymnasium</div>
   <nav>
     <a href="#about">About</a>
     <a href="#facility">Facility</a>
@@ -428,14 +444,15 @@
 
 <section class="hero">
   <div>
-    <h1>Push Your Limits With Us</h1>
+    <h1>Train Strong. <span>Feel Better.</span> Live Fit.</h1>
     <p>
-      A powerful 3-floor fitness destination in Kaundampalayam, Coimbatore — built for strength, cardio, free workouts, yoga and total body transformation.
+      Bright Gymnasium is a modern 3-floor fitness facility in Kaundampalayam, Coimbatore.
+      Train with dedicated spaces for cardio, free workouts, strength training and yoga.
     </p>
 
     <div class="hero-actions">
-      <a class="btn btn-primary" href="tel:+916369533068">Join Now</a>
-      <a class="btn btn-outline" href="https://wa.me/916369533068">WhatsApp</a>
+      <a class="btn btn-primary" href="tel:+916369533068">Call Now</a>
+      <a class="btn btn-light" href="https://wa.me/916369533068">WhatsApp Us</a>
     </div>
 
     <div class="chips">
@@ -451,63 +468,65 @@
   <div class="hero-visual"></div>
 </section>
 
-<section id="about" class="dark">
-  <div class="label">About Us</div>
-  <h2 class="section-title">Your Fitness Journey Starts Here</h2>
+<section id="about">
+  <div class="label">About Bright Gymnasium</div>
+  <h2 class="section-title">Your fitness journey starts here</h2>
   <p class="section-text">
-    Bright Gymnasium is designed for beginners, fitness lovers and serious lifters. We provide a motivating training space with dedicated floors for different fitness goals.
+    We welcome beginners, regular gym users and serious fitness lovers. Our goal is to provide
+    a clean, motivating and well-planned training environment where every member can stay consistent
+    and work toward real results.
   </p>
 
   <div class="stats">
-    <div class="stat"><strong>3</strong><span>+</span><p>Dedicated<br>Floors</p></div>
-    <div class="stat"><strong>1</strong><span>st</span><p>Cardio & Free<br>Workout Floor</p></div>
-    <div class="stat"><strong>2</strong><span>nd</span><p>Strength<br>Training Floor</p></div>
-    <div class="stat"><strong>3</strong><span>rd</span><p>Yoga & Wellness<br>Floor</p></div>
-  </div>
-
-  <div class="media-box">
-    <div class="play">▶</div>
+    <div class="stat"><strong>3</strong><span>+</span><p>Dedicated Floors</p></div>
+    <div class="stat"><strong>1</strong><span>st</span><p>Cardio & Free Workouts</p></div>
+    <div class="stat"><strong>2</strong><span>nd</span><p>Strength Training</p></div>
+    <div class="stat"><strong>3</strong><span>rd</span><p>Yoga & Wellness</p></div>
   </div>
 </section>
 
-<section id="facility">
+<section id="facility" class="dark">
   <div class="label">Our Facility</div>
-  <h2 class="section-title">A Complete 3-Floor Fitness Space</h2>
+  <h2 class="section-title">A complete <span>3-floor</span> fitness space</h2>
   <p class="section-text">
-    Every floor is planned to give members a better workout experience with separate zones for cardio, strength, free workouts and yoga.
+    Each floor is planned for a better workout experience with separate areas for cardio,
+    free workouts, strength training and yoga.
   </p>
 
   <div class="floors">
     <div class="floor">
-      <h3>1st Floor</h3>
-      <p>Cardio and free workout area for stamina, fat loss, warmups and functional training.</p>
+      <h3>First Floor</h3>
+      <p>Cardio and free workout area for stamina, warmups, fat loss and functional training.</p>
     </div>
+
     <div class="floor">
-      <h3>2nd Floor</h3>
+      <h3>Second Floor</h3>
       <p>Strength training and gym equipment area for muscle gain, body shaping and progressive training.</p>
     </div>
+
     <div class="floor">
-      <h3>3rd Floor</h3>
+      <h3>Third Floor</h3>
       <p>Dedicated yoga space for breathing, flexibility, balance, relaxation and wellness.</p>
     </div>
   </div>
 </section>
 
-<section id="services" class="dark">
+<section id="services">
   <div class="label">Our Services</div>
-  <h2 class="section-title">Unleash Your Potential <span class="accent">Premium</span> Fitness Services</h2>
+  <h2 class="section-title">Fitness programs for every goal</h2>
   <p class="section-text">
-    Train for strength, transformation, endurance, flexibility and overall fitness.
+    Whether your goal is weight loss, muscle gain, strength, stamina or flexibility,
+    Bright Gymnasium gives you the space and support to train better.
   </p>
 
   <div class="cards">
     <div class="service-card">
-      <img src="images/strength.jpeg" alt="Strength Training">
+      <img src="images/strength.jpg" alt="Strength Training">
       <h3>Strength Training</h3>
     </div>
 
     <div class="service-card">
-      <img src="images/cardio.jpeg" alt="Cardio Fitness">
+      <img src="images/cardio.jpg" alt="Cardio Fitness">
       <h3>Cardio Fitness</h3>
     </div>
 
@@ -533,9 +552,9 @@
   </div>
 </section>
 
-<section id="faq">
+<section id="faq" class="dark">
   <div class="label">Frequently Asked Questions</div>
-  <h2 class="section-title">Why Choose Us For Your <span class="accent">Fitness</span> Journey</h2>
+  <h2 class="section-title">Why choose Bright Gymnasium?</h2>
 
   <div class="faq-wrap">
     <div class="faq-img"></div>
@@ -548,12 +567,12 @@
 
       <details>
         <summary>What facilities are available?</summary>
-        <p>We have a 3-floor facility with cardio and free workouts on one floor, strength training on another floor, and yoga on the 3rd floor.</p>
+        <p>We have a 3-floor facility with cardio and free workouts, strength training, gym equipment and a dedicated yoga floor.</p>
       </details>
 
       <details>
         <summary>Is the gym beginner friendly?</summary>
-        <p>Yes. Bright Gymnasium is suitable for beginners, regular fitness users and serious strength training members.</p>
+        <p>Yes. The gym is suitable for beginners, regular members and serious fitness users.</p>
       </details>
 
       <details>
@@ -566,17 +585,17 @@
 
 <section id="contact" class="contact">
   <div class="contact-box">
-    <div class="label">Ready To Grow?</div>
-    <h2 class="section-title">Start Your Fitness Journey Today</h2>
+    <div class="label">Visit Us</div>
+    <h2 class="section-title">Start your fitness journey today</h2>
     <p class="section-text" style="margin:auto">
-      Visit Bright Gymnasium at 8 VKC Nataraj Street, Kaundampalayam, Coimbatore.
+      Bright Gymnasium, 8 VKC Nataraj Street, Kaundampalayam, Coimbatore.
     </p>
 
     <div class="contact-actions">
       <a class="btn btn-primary" href="tel:+916369533068">Call 6369533068</a>
-      <a class="btn btn-outline" href="https://wa.me/916369533068">WhatsApp</a>
-      <a class="btn btn-outline" href="https://www.instagram.com/brightgymnasium?igsh=ajQ3c28ydHV0NTgx">Instagram</a>
-      <a class="btn btn-outline" href="https://www.facebook.com/share/1Gj97zCkV3/">Facebook</a>
+      <a class="btn btn-light" href="https://wa.me/916369533068">WhatsApp</a>
+      <a class="btn btn-light" href="https://www.instagram.com/brightgymnasium?igsh=ajQ3c28ydHV0NTgx">Instagram</a>
+      <a class="btn btn-light" href="https://www.facebook.com/share/1Gj97zCkV3/">Facebook</a>
     </div>
 
     <iframe
@@ -593,7 +612,8 @@
 </footer>
 
 <script>
-  const revealItems = document.querySelectorAll('.floor,.service-card,.stat,details,.media-box');
+  const revealItems = document.querySelectorAll('.floor,.service-card,.stat,details,.hero-visual');
+
   revealItems.forEach(el => {
     el.style.opacity = 0;
     el.style.transform = 'translateY(35px)';
